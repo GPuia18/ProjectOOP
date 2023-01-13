@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Game</title>
+</head>
+<body>
+<div class="game_form" th:each="question: ${myQuestions}">
+    <div class="question">
+        <p>Q. <span th:text="${question.questionText}"/></p>
+    </div>
+    <div class="answers">
+        <form action="/game/answered" method="POST"><button type="submit" class="answer"><input name="answer" type="hidden" value="1">A. <span th:text="${question.answer1}"/></button></form>
+        <form action="/game/answered" method="POST"><button class="answer" type="submit"><input name="answer" type="hidden" value="2">B. <span th:text="${question.answer2}"/></button></form>
+    </div>
+    <div class="answers" style="padding-bottom:50px;">
+        <form action="/game/answered" method="POST"><button class="answer" type="submit"><input name="answer" type="hidden" value="3">C. <span th:text="${question.answer3}"/></button></form>
+        <form action="/game/answered" method="POST"><button class="answer" type="submit"><input name="answer" type="hidden" value="4">D. <span th:text="${question.answer4}"/></button></form>
+    </div>
+</div>
+<div class="nav_bottom">
+    <a href="/user/choose"><div class="link_left_bottom"><div>Home</div></div></a>
+    <a href="/user/rankings"><div class="link_bottom"><div>Rankings</div></div></a>
+</div>
+</body>
+</html>

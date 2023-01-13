@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/style.css">
+  <title>Game</title>
+</head>
+<body th:each="res: ${myResult}">
+<div class="points">
+  <h1>Score</h1>
+  <h2 th:text="|${res.pts}/10|"></h2>
+  <form method="POST" action="/user/result">
+      <input th:value="${res.pts}" name="points" type="hidden"/>
+      <input th:value="${res.difficulty}" name="difficulty" type="hidden"/>
+      <button type="submit" class="next" style="width: 80px; height: 80px;">Add to ranking</button>
+  </form>
+</div>
+</form>
+<div class="nav_bottom">
+    <a href="/user/choose"><div class="link_left_bottom"><div>Home</div></div></a>
+    <a href="/user/rankings"><div class="link_bottom"><div>Rankings</div></div></a>
+</div>
+</body>
+</html>

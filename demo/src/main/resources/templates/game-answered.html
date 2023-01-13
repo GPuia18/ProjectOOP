@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/style.css">
+  <title>Game</title>
+</head>
+<body th:each="question: ${myQuestions}">
+<div class="game_form">
+  <div class="question">
+    <p>Q. <span th:text="${question.questionText}"/></p>
+  </div>
+  <div class="answers">
+    <button type="submit" class="answer" th:classappend="${correct} ? green : red">A. <span th:text="${question.answer1}"/></button>
+    <button type="submit" class="answer" th:classappend="${correct} ? green : red">B. <span th:text="${question.answer2}"/></button>
+  </div>
+  <div class="answers" style="padding-bottom:50px;">
+    <button type="submit" class="answer" th:classappend="${correct} ? green : red">C. <span th:text="${question.answer3}"/></button>
+    <button type="submit" class="answer" th:classappend="${correct} ? green : red">D. <span th:text="${question.answer4}"/></button>
+  </div>
+
+</div>
+<a href="" th:href="@{|/game/q/${question.id}|}"><div class="next">Next</div></a>
+<div class="nav_bottom">
+  <a href="/user/choose"><div class="link_left_bottom"><div>Home</div></div></a>
+  <a href="/user/rankings"><div class="link_bottom"><div>Rankings</div></div></a>
+</div>
+</body>
+</html>

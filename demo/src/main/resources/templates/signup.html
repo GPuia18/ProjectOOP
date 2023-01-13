@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/style.css">
+  <title>Sign up</title>
+</head>
+<body style="flex-direction: column;">
+<h1 style="padding-bottom: 10px">Sign up</h1>
+<div class="login">
+<form class="login_form" action="/user/create" method="POST">
+
+  <div>
+    <input type="text" name="firstName" id="firstName" placeholder="First name">
+  </div>
+  <div>
+    <input type="text" name="lastName" id="lastName" placeholder="Last name">
+  </div>
+  <div>
+    <input type="text" name="username" id="username" placeholder="Username">
+  </div>
+  <div>
+    <input type="password" name="password" id="password" placeholder="Password">
+  </div>
+  <button type="submit">Sign up</button>
+
+</form>
+</div>
+</body>
+</html>
